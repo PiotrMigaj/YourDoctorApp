@@ -1,0 +1,49 @@
+<div #ref *ngIf="notification" class="notification">
+  {{notification}}
+</div>
+
+<mat-card>
+  <mat-card-title>Below is a list of your issued appointments</mat-card-title>
+  <mat-card *ngFor="let appointment of appointments">
+    <div class="appointment-content">
+      <div class="row appointment-header-row">
+        <h3>Appointment id: {{appointment.id}}</h3>
+      </div>
+      <div class="row appointment-content-row">
+
+        <div class="time-desc col-4">
+          <p>Date and hour the appointment:</p>
+          <span>{{appointment.dateOfAppointment | date:'EEEE, MMMM d, y'}}</span><br>
+          <span>{{appointment.timeOfAppointment.slice(0,5)}}</span><br>
+        </div>
+        <div class="address-desc col-4">
+          <p>Address:</p>
+          <span>{{appointment.address.street}} {{appointment.address.number}}</span><br>
+          <span>{{appointment.address.zipCode}} {{appointment.address.city}}</span><br>
+        </div>
+        <div class="user-desc col-4">
+
+          <h3 *ngIf="!appointment.taken" style="color: green;">AVAILABLE</h3>
+          <h3 *ngIf="appointment.taken" style="color: red;">TAKEN</h3>
+
+          <div *ngIf="appointment.taken">
+            <p>Patient data:</p>
+            <span>{{appointment.user.firstName}} {{appointment.user.lastName}}</span><br>
+            <span>{{appointment.user.email}}</span><br>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </mat-card>
+  <mat-paginator [pageSizeOptions]="[5, 10, 50]" showFirstLastButtons aria-label="Select page of Products"
+    [length]="totalElements" (page)="loadAppointments($event)">
+  </mat-paginator>
+
+</mat-card>

@@ -1,0 +1,48 @@
+
+  <div #ref *ngIf="notification" class="notification">
+    {{notification}}
+  </div>
+
+  <mat-card>
+      <mat-card-title>List of available appointments:</mat-card-title>
+      <mat-card-content class="appointments-list-content">
+        <table mat-table [dataSource]="appointments" class="mat-elevation-z2 appointment-table">
+  
+  
+          <ng-container matColumnDef="date-and-hour-of-appointment">
+            <th mat-header-cell *matHeaderCellDef>Date and hour of appointment</th>
+            <td mat-cell *matCellDef="let appointment">{{appointment.dateOfAppointment| date:'EEEE, MMMM d, y'}}<br> {{appointment.timeOfAppointment}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef>Address</th>
+            <td mat-cell *matCellDef="let appointment">{{appointment.address.street}} {{appointment.address.number}}<br>{{appointment.address.zipCode}} {{appointment.address.city}}</td>
+          </ng-container>
+  
+          <ng-container  matColumnDef="register-button">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let appointment">
+              <button *ngIf="authService.isLoggedIn()" class="register-button" mat-button mat-raised-button color="primary"
+                (click)="registerAppointment(appointment.id)">Register</button>
+              <button *ngIf="!authService.isLoggedIn()" class="register-button" mat-button disabled>You have to be logged in to register</button>
+            </td>
+          </ng-container>
+  
+  
+          <tr mat-header-row *matHeaderRowDef="dataSource"></tr>
+          <tr mat-row *matRowDef="let row; columns: dataSource"></tr>
+        </table>
+  
+        <mat-card-footer>
+          <mat-progress-bar *ngIf="loadingList" mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+  
+        <mat-paginator
+            [pageSizeOptions]="[5, 10, 50]"
+            showFirstLastButtons
+            aria-label="Select page of Products"
+            [length]="totalElements"
+            (page)="loadAppointments($event)">
+        </mat-paginator>
+      </mat-card-content>
+    </mat-card>

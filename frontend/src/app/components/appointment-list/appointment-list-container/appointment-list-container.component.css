@@ -1,0 +1,121 @@
+.appointment-table{
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 2px;
+  }
+
+  .appointments-list-content{
+    margin-top: 20px;
+  }
+  
+  .mat-column-identifier{
+    width: 48px;
+  }
+  
+  .mat-column-price{
+    width: 64px;
+  }
+  
+  .mat-column-quantity{
+    width: 48px;
+  }
+  
+  mat-card-footer {
+    padding-top:10px;
+  }
+  
+  .mat-column-delete-button {
+    width: 48px;
+  }
+  
+  .record-delete-button {
+    border-radius: 16px;
+  }
+  
+  .mat-paginator{
+    margin-top: 8px;
+  }
+
+  .user-details-container{
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.appointment-header-row{
+  border-bottom: solid rgb(172, 170, 170) 1px;
+}
+.appointment-header-row h3{
+  font-weight: 500;
+}
+
+.appointment-content-row{
+  margin-top: 20px;
+}
+
+.user-desc p{
+  margin-bottom: 20px;
+}
+
+.time-desc{
+  border-right: solid rgb(172, 170, 170) 1px;
+}
+
+.address-desc {
+  border-right: solid rgb(172, 170, 170) 1px;
+}
+
+
+.time-desc p{
+  margin-bottom: 20px;
+}
+
+.address-desc p{
+  margin-bottom: 20px;
+}
+
+  .notification {
+    border: 2px solid rgba(255, 0, 0, 0.4);
+    border-radius: 4px;
+    padding: 8px;
+    background-color: rgba(255, 0, 0, 0.2);
+    margin: 8px 0;
+    font-size: 1.4em;
+    animation: show-from-left ;
+    animation-duration: 1s;
+  }
+  
+  .hidden {
+    animation: hide-to-right;
+    animation-duration: 1s;
+  }
+  
+  @keyframes show-from-left {
+    0% {
+      transform: translateX(-3200px)
+    }
+    80% {
+      transform: translateX(+50px)
+    }
+    100% {
+      transform: translateX(0)
+    }
+  }
+  
+  @keyframes hide-to-right {
+    0% {
+      transform: translateX(0)
+    }
+    20% {
+      transform: translateX(-50px)
+    }
+    100% {
+      transform: translateX(+3200px)
+    }
+  }

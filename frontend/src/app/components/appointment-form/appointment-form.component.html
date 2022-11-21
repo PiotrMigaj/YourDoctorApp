@@ -1,0 +1,41 @@
+<div class="col-4 offset-4 appointment-form-container">
+  <div #ref *ngIf="notification" class="notification">
+    {{notification}}
+  </div>
+
+  <mat-card>
+    <mat-card-title>Appointment form</mat-card-title>
+    <mat-card-subtitle>Create new appointment</mat-card-subtitle>
+    <mat-card-content class="appointment-registration-form-content">
+
+      <h3>Pick date:</h3>
+      <mat-card class="demo-inline-calendar-card">
+        <mat-calendar [(selected)]="inputDateOfAppointment"></mat-calendar>
+      </mat-card>
+
+      <h3>Pick time:</h3>
+      <div class="ngx-timepicker-field-example">
+        <ngx-timepicker-field [format]="24" [defaultTime]="'15:00'"
+          [(ngModel)]="createAppointmentRequest.timeOfAppointment"></ngx-timepicker-field>
+      </div>
+
+      
+
+      <div class="form-button-row">
+        <button class="clear-button" type="button" mat-button mat-raised-button color="warn" (click)="clearForm()">
+          Clear
+        </button>
+        <button class="submit-button" type="button" mat-button mat-raised-button (click)="registerAppointment()">
+          Create
+        </button>
+      </div>
+
+      <mat-card-footer>
+        <mat-progress-bar *ngIf="sendingUser" mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card-content>
+  </mat-card>
+
+
+
+</div>

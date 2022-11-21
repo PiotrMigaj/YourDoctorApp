@@ -1,0 +1,77 @@
+.appointment-table{
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 2px;
+  }
+
+  .appointments-list-content{
+    margin-top: 20px;
+  }
+  
+  .mat-column-date-and-hour-of-appointment{
+    width: 300px;
+  }
+
+  .mat-column-address{
+    width: 300px;
+  }
+   
+  mat-card-footer {
+    padding-top:10px;
+  }
+  
+  .mat-column-register-button {
+    width: 150px;
+  }
+
+  .register-button{
+    background-color: #27aae1;
+  }
+    
+  .mat-paginator{
+    margin-top: 8px;
+  }
+
+  .notification {
+    border: 2px solid rgba(255, 0, 0, 0.4);
+    border-radius: 4px;
+    padding: 8px;
+    background-color: rgba(255, 0, 0, 0.2);
+    margin: 8px 0;
+    font-size: 1.4em;
+    animation: show-from-left ;
+    animation-duration: 1s;
+  }
+  
+  .hidden {
+    animation: hide-to-right;
+    animation-duration: 1s;
+  }
+
+  td {
+    height: 80px;
+  }
+  
+  @keyframes show-from-left {
+    0% {
+      transform: translateX(-3200px)
+    }
+    80% {
+      transform: translateX(+50px)
+    }
+    100% {
+      transform: translateX(0)
+    }
+  }
+  
+  @keyframes hide-to-right {
+    0% {
+      transform: translateX(0)
+    }
+    20% {
+      transform: translateX(-50px)
+    }
+    100% {
+      transform: translateX(+3200px)
+    }
+  }

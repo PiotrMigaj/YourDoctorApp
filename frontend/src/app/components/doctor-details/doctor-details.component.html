@@ -1,0 +1,51 @@
+<div class="doctor-details-container col-10 offset-1">
+
+  <mat-card>
+    <div class="doctor-content">
+      <div class="doctor-image">
+        <img class="doctor-image" src="../assets/images/placeholder.png">
+      </div>
+      <div class="doctor-desc">
+        <h1>My profile</h1>
+        <h2>Doctor {{doctorDto.firstName}} {{doctorDto.lastName}} [id: {{doctorDto.id}}]</h2>
+        <h3>{{doctorDto.specializations}}</h3>
+        <p>Email: {{doctorDto.email}}</p>
+        <p>Phone number: {{doctorDto.phoneNumber}}</p><br>
+        <!-- <span>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum architecto ab culpa nesciunt mollitia
+            aut voluptatibus magnam assumenda consequatur, quos, nam similique illo blanditiis, adipisci quibusdam
+            odit natus ipsum numquam.</p>
+        </span> -->
+        <button mat-raised-button color="primary" (click)="rediretToAppointmentForm()">Add new appointment</button>
+      </div>
+      <div class="doctor-address" *ngFor="let address of doctorDto.addresses; index as i">
+        <div class="doctor-address-content">
+          <p>Address {{i+1}}:</p>
+          <span>{{address.street}} {{address.number}}</span><br>
+          <span>{{address.city}} {{address.zipCode}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="appointments-row">
+
+      <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Issued appointments">
+          <app-all-appointment-list [doctorId]="doctorDto.id">
+          </app-all-appointment-list>
+        </mat-tab>
+        <mat-tab label="Your appointments">
+          <app-doctor-appointment-list [userId]="doctorDto.id"></app-doctor-appointment-list>
+        </mat-tab>
+      </mat-tab-group>
+
+
+
+    </div>
+  </mat-card>
+
+
+
+
+
+</div>

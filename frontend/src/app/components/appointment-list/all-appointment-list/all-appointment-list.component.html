@@ -1,0 +1,8 @@
+<app-appointment-list-container
+[appointments]="pageResponse.content"
+[totalElements]="pageResponse.totalElements"
+[loadingList]="loadingList"
+(loadAppointmentsEvent)="getAppointments($event)"
+>
+
+</app-appointment-list-container>

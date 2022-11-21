@@ -1,0 +1,8 @@
+<app-doctors-list-container
+    [doctors]="pageResponse.content"
+    [totalElements]="pageResponse.totalElements"
+    [loadingList]="loadingList"
+    (loadDoctorsEvent)="getDoctors($event)"
+>
+
+</app-doctors-list-container>

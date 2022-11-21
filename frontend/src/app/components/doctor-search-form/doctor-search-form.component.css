@@ -1,0 +1,59 @@
+.search-for-doc-container{
+    margin-top: 20px;
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+}
+
+mat-form-field{
+    font-size: medium;
+    width: 320px;
+    margin: 5px;
+}
+
+.submit-button{
+    width: 240px;
+    color: white;
+    background-color: #27aae1;
+    margin-right: 10px;
+}
+
+.clear-button{
+    width: 120px;
+    color: black;
+    background-color: #f4ce0f;
+}
+
+mat-card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.doctor-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.doctor-image{
+    height: 250px;
+}
+
+.doctor-desc{
+    margin-left: 20px;
+    width: 50%;
+}
+
+.doctor-address{
+    padding-left: 30px;
+}
+
+.doctor-address-content span{
+    color: grey;
+}
+
+.doctor-desc button{
+    background-color: #00a79d;
+    margin-top: 10px;
+}

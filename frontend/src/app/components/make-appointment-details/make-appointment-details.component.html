@@ -1,0 +1,30 @@
+<div class="doctor-details-container col-10 offset-1">
+
+  <mat-card>
+    <div class="doctor-content">
+      <div class="doctor-image">
+        <img class="doctor-image" src="../assets/images/placeholder.png">
+      </div>
+      <div class="doctor-desc">
+        <h2>Doctor {{doctorDto.firstName}} {{doctorDto.lastName}}</h2>
+        <h3>{{doctorDto.specializations}}</h3>
+        <span>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum architecto ab culpa nesciunt mollitia
+            aut voluptatibus magnam assumenda consequatur, quos, nam similique illo blanditiis, adipisci quibusdam
+            odit natus ipsum numquam.</p>
+        </span>
+      </div>
+      <div class="doctor-address" *ngFor="let address of doctorDto.addresses; index as i">
+        <div class="doctor-address-content">
+          <p>Address {{i+1}}:</p>
+          <span>{{address.street}} {{address.number}}</span><br>
+          <span>{{address.city}} {{address.zipCode}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="appointments-row">
+      <app-available-doctor-appointments [doctorId]="doctorId"></app-available-doctor-appointments>
+    </div> 
+  </mat-card>
+</div>

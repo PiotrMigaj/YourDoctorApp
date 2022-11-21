@@ -1,0 +1,59 @@
+
+.doctor-details-container{
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-details-image{
+    background-color: blue;
+    /* display: flex;
+    justify-content: center; */
+
+}
+
+.doc-image{
+    height: 250px;
+    margin: auto;
+}
+
+.doctor-details-content{
+    background-color: aqua;
+}
+
+mat-card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .doctor-content{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .doctor-image{
+    height: 250px;
+  }
+  
+  .doctor-desc{
+    margin-left: 20px;
+    width: 50%;
+  }
+  
+  .doctor-address{
+    padding-left: 30px;
+  }
+  
+  .doctor-address-content span{
+    color: grey;
+  }
+  
+  .doctor-desc button{
+    background-color: #00a79d;
+    margin-top: 10px;
+  }
+
+  .appointments-row{
+    margin-top: 50px;
+  }

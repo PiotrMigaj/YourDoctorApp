@@ -1,0 +1,47 @@
+<div class="container-lg">
+    <header class="app-header">
+        <div class="app-logo col-2">
+            <a href="/home">
+                <img class="logo-image" src="../assets/yourDoctorLogo.png" height="48px">
+            </a>
+            <div>
+                <a href="/home" style="text-decoration:none;">
+                    <h1>YourDoctor</h1>
+                </a>
+            </div>
+        </div>
+        <div class="app-header-doctors col-2 offset-1">
+            <button mat-button color="basic" [routerLink]="['/home']">Doctors</button>
+        </div>
+
+        <div *ngIf="!authService.isLoggedIn()" class="app-header-register col-2 offset-3">
+            <button mat-button [matMenuTriggerFor]="menu" mat-button color="basic">Register</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item color="basic" [routerLink]="['user-register']">as a Patient</button>
+                <button mat-menu-item color="basic" [routerLink]="['doctor-register']">as a Doctor</button>
+            </mat-menu>
+        </div>
+
+        <div *ngIf="!authService.isLoggedIn()" class="app-header-login col-2">
+            <button mat-button color="basic" [routerLink]="['/login']">Login</button>
+        </div>
+
+        <div *ngIf="authService.isLoggedIn()" class="app-header-register col-2 offset-3">
+            <button *ngIf="authService.isDoctor()" mat-button color="basic" [routerLink]="['doctor',authService.getUserId()]">My account</button>
+            <button *ngIf="authService.isSimpleUser()" mat-button color="basic" [routerLink]="['user',authService.getUserId()]">My account</button>
+        </div>
+
+
+        <div *ngIf="authService.isLoggedIn()" class="app-header-logout col-2">
+            <button mat-button color="basic" (click)="authService.logout()">Logout</button>
+        </div>
+        
+    </header>
+    <main class="app-main">
+        <router-outlet></router-outlet>
+    </main>
+    <footer class="app-footer">
+        Author: PMIG :) 2022
+    </footer>
+
+</div>

@@ -1,0 +1,45 @@
+<div class="col-6 offset-3 user-registration-form">
+  <div #ref *ngIf="notification" class="notification">
+    {{notification}}
+  </div>
+
+  <mat-card>
+    <mat-card-title>User registration form</mat-card-title>
+    <mat-card-subtitle>Join us to make an appointments</mat-card-subtitle>
+    <mat-card-content class="user-registration-form-content">
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Email:</mat-label>
+        <input type="email" pattern="^\S+@\S+\.\S+$" matInput placeholder="Email:" [(ngModel)]="createAppUserRequest.email">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Password:</mat-label>
+        <input type="password" matInput placeholder="Password:" [(ngModel)]="createAppUserRequest.password">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>First name:</mat-label>
+        <input type="text" matInput placeholder="First name:" [(ngModel)]="createAppUserRequest.firstName">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Last name:</mat-label>
+        <input type="text" matInput placeholder="Last name:" [(ngModel)]="createAppUserRequest.lastName">
+      </mat-form-field>
+
+      <div class="form-button-row">
+        <button class="clear-button" type="button" mat-button mat-raised-button color="warn" (click)="clearForm()">
+          Clear
+        </button>
+        <button class="submit-button" type="button" mat-button mat-raised-button (click)="registerUser()">
+          Register
+        </button>
+      </div>
+
+      <mat-card-footer>
+        <mat-progress-bar *ngIf="sendingUser" mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card-content>
+  </mat-card>
+</div>

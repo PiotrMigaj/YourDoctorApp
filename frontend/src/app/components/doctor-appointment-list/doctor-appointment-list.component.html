@@ -1,0 +1,34 @@
+<div class="user-details-container col-12">
+    <mat-card>
+        <mat-card-title>Below you can check all appointments you have registered:</mat-card-title>
+        <mat-card *ngFor="let appointment of appointments">
+            <div class="appointment-content">
+                <div class="row appointment-header-row">
+                    <h3>Your appointment id: {{appointment.id}}</h3>
+                </div>
+                <div class="row appointment-content-row">
+                    <div class="doctor-desc col-4">
+                        <p>Doctor:</p>
+                        <span>{{appointment.doctor.firstName}} {{appointment.doctor.lastName}}
+                            {{appointment.doctor.specializations}}</span><br>
+                        <span>{{appointment.doctor.email}}</span><br>
+                        <span>{{appointment.doctor.phoneNumber}}</span><br>
+                    </div>
+                    <div class="time-desc col-4">
+                        <p>Date and hour the appointment:</p>
+                        <span>{{appointment.dateOfAppointment | date:'EEEE, MMMM d, y'}}</span><br>
+                        <span>{{appointment.timeOfAppointment.slice(0,5)}}</span><br>
+                    </div>
+                    <div class="address-desc col-4">
+                        <p>Address:</p>
+                        <span>{{appointment.address.street}} {{appointment.address.number}}</span><br>
+                        <span>{{appointment.address.zipCode}} {{appointment.address.city}}</span><br>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+        <mat-paginator [pageSizeOptions]="[5, 10, 50]" showFirstLastButtons aria-label="Select page of Products"
+            [length]="totalElements" (page)="loadAppointments($event)">
+        </mat-paginator>
+    </mat-card>
+</div>

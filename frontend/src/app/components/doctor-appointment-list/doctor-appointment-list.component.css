@@ -1,0 +1,41 @@
+.user-details-container {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.appointment-header-row {
+    border-bottom: solid rgb(172, 170, 170) 1px;
+}
+
+.appointment-header-row h3 {
+    font-weight: 500;
+}
+
+.appointment-content-row {
+    margin-top: 20px;
+}
+
+.doctor-desc {
+    border-right: solid rgb(172, 170, 170) 1px;
+}
+
+.doctor-desc p {
+    margin-bottom: 20px;
+}
+
+.time-desc {
+    border-right: solid rgb(172, 170, 170) 1px;
+}
+
+.time-desc p {
+    margin-bottom: 20px;
+}
+
+.address-desc p {
+    margin-bottom: 20px;
+}

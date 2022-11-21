@@ -1,0 +1,83 @@
+
+<div class="col-6 offset-3 doctor-registration-form">
+<div #ref *ngIf="notification" class="notification">
+    {{notification}}
+  </div>
+
+  <mat-card>
+    <mat-card-title>Doctor registration form</mat-card-title>
+    <mat-card-subtitle>Join our community</mat-card-subtitle>
+    <mat-card-content class="doctor-registration-form-content">
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Email:</mat-label>
+        <input type="email" pattern="^\S+@\S+\.\S+$" matInput placeholder="Email:" [(ngModel)]="createDoctorRequest.email">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Password:</mat-label>
+        <input type="password" matInput placeholder="Password:" [(ngModel)]="createDoctorRequest.password">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>First name:</mat-label>
+        <input type="text" matInput placeholder="First name:" [(ngModel)]="createDoctorRequest.firstName">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Last name:</mat-label>
+        <input type="text" matInput placeholder="Last name:" [(ngModel)]="createDoctorRequest.lastName">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Phone number:</mat-label>
+        <input type="text" matInput placeholder="Phone number:" [(ngModel)]="createDoctorRequest.phoneNumber">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Specialization:</mat-label>
+        <mat-select [(ngModel)] = "createDoctorRequest.createSpecializationRequest.specialization">
+          <mat-option *ngFor="let specialization of specializations" [value]="specialization">
+            {{specialization}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>City:</mat-label>
+        <input type="text" matInput placeholder="City:" [(ngModel)]="createDoctorRequest.createAddressRequest.city">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Zip code:</mat-label>
+        <input type="text" matInput placeholder="Zip code:" [(ngModel)]="createDoctorRequest.createAddressRequest.zipCode">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Street:</mat-label>
+        <input type="text" matInput placeholder="Street:" [(ngModel)]="createDoctorRequest.createAddressRequest.street">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Street number:</mat-label>
+        <input type="text" matInput placeholder="Street number:" [(ngModel)]="createDoctorRequest.createAddressRequest.number">
+      </mat-form-field>
+
+      <div class="form-button-row">
+        <button class="clear-button" type="button" mat-button mat-raised-button color="warn" (click)="clearForm()">
+          Clear
+        </button>
+        <button class="submit-button" type="button" mat-button mat-raised-button (click)="registerDoctor()">
+          Submit
+        </button>
+      </div>
+
+      <mat-card-footer>
+        <mat-progress-bar *ngIf="sendingDoctor" mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+

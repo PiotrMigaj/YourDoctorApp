@@ -1,0 +1,35 @@
+<div class="col-6 offset-3 login-form">
+  <div #ref *ngIf="notification" class="notification">
+    {{notification}}
+  </div>
+
+  <mat-card>
+    <mat-card-title>Login form</mat-card-title>
+    <mat-card-subtitle>Take care of your health
+    </mat-card-subtitle>
+    <mat-card-content class="login-form-content">
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Email:</mat-label>
+        <input type="email" pattern="^\S+@\S+\.\S+$" matInput placeholder="Email:" (keyup.enter)="login()"
+          [(ngModel)]="authenticationRequest!.login">
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Password:</mat-label>
+        <input type="password" matInput placeholder="Password:" (keyup.enter)="login()"
+          [(ngModel)]="authenticationRequest!.pass">
+      </mat-form-field>
+
+      <div class="form-button-row">
+        <button class="clear-button" type="button" mat-button mat-raised-button color="warn" (click)="clearForm()">
+          Clear
+        </button>
+        <button class="submit-button" type="submit" mat-button mat-raised-button (click)="login()">
+          Login
+        </button>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>

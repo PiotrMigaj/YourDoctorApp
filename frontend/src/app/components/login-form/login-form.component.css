@@ -1,0 +1,69 @@
+.login-form{
+  margin-top: 50px;
+}
+
+.login-form-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-button-row {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.submit-button {
+  background-color: #27aae1;
+  color: white;
+  width: 200px;
+}
+
+.clear-button{
+  background-color: #f4ce0f;
+  color: black;
+}
+
+.form-button-row button {
+  min-width: 110px;
+  margin: 0 4px;
+}
+
+.notification {
+    border: 2px solid rgba(255, 0, 0, 0.4);
+    border-radius: 4px;
+    padding: 8px;
+    background-color: rgba(255, 0, 0, 0.2);
+    margin: 8px 0;
+    font-size: 1.4em;
+    animation: show-from-left ;
+    animation-duration: 1s;
+  }
+  
+  .hidden {
+    animation: hide-to-right;
+    animation-duration: 1s;
+  }
+  
+  @keyframes show-from-left {
+    0% {
+      transform: translateX(-3200px)
+    }
+    80% {
+      transform: translateX(+50px)
+    }
+    100% {
+      transform: translateX(0)
+    }
+  }
+  
+  @keyframes hide-to-right {
+    0% {
+      transform: translateX(0)
+    }
+    20% {
+      transform: translateX(-50px)
+    }
+    100% {
+      transform: translateX(+3200px)
+    }
+  }
